@@ -1,0 +1,147 @@
+{
+  "$schema": "https://supabase.com/schemas/config/v1.json",
+  // Local development stack only (`pnpm supabase:start`). Ports use the 553xx range so this stack
+  // can run beside other local Supabase projects on the default 543xx ports. The hosted project is
+  // configured to match
+  // through the dashboard; see docs/environment.md. Reference:
+  // https://supabase.com/docs/guides/local-development/cli/config
+  "project_id": "spiritualhealing",
+
+  // The Data API stays off (ADR 0004): the browser never talks to the database, only our API does.
+  "api": {
+    "enabled": false,
+    "port": 55321,
+    "schemas": [],
+    "extra_search_path": ["extensions"],
+    "max_rows": 1000,
+  },
+
+  "db": {
+    "port": 55322,
+    "shadow_port": 55320,
+    "health_timeout": "2m",
+    // Must match the hosted project and the integration-test image (ADR 0011).
+    "major_version": 17,
+    "pooler": { "enabled": false },
+    // Our migrations are applied by drizzle-kit as app_migrator (`pnpm db:setup:local`), not by the CLI.
+    "migrations": { "enabled": false },
+    "seed": { "enabled": false },
+  },
+
+  // Not used by the product yet (ADR 0014: storage is built only when needed).
+  "realtime": { "enabled": false },
+  "storage": { "enabled": false },
+  "edge_runtime": { "enabled": false },
+  "analytics": { "enabled": false },
+
+  "studio": {
+    "enabled": true,
+    "port": 55323,
+    "api_url": "http://127.0.0.1",
+  },
+
+  // Mailpit catches every email locally; the end-to-end tests read OTPs and links from it.
+  "local_smtp": {
+    "enabled": true,
+    "port": 55324,
+  },
+
+  "auth": {
+    "enabled": true,
+    "site_url": "http://localhost:3000",
+    "additional_redirect_urls": [
+      "http://localhost:3000/auth/callback",
+      "http://localhost:3000/auth/confirm",
+    ],
+    // Access tokens are short-lived; our API also checks the session on every request (ADR 0006).
+    "jwt_expiry": 3600,
+    "enable_refresh_token_rotation": true,
+    "refresh_token_reuse_interval": 10,
+    "enable_signup": true,
+    "enable_anonymous_sign_ins": false,
+    "enable_manual_linking": false,
+    // Length is the only rule (CLAUDE.md, NIST SP 800-63B); mirrors PASSWORD_MIN_LENGTH in packages/shared.
+    "minimum_password_length": 12,
+    "password_requirements": "",
+
+    "rate_limit": {
+      "email_sent": 30,
+      "sms_sent": 0,
+      "anonymous_users": 0,
+      "token_refresh": 150,
+      "sign_in_sign_ups": 30,
+      "token_verifications": 30,
+      "web3": 0,
+    },
+
+    "email": {
+      "enabled": true,
+      // A change of address must be confirmed from both the old and the new inbox.
+      "double_confirm_changes": true,
+      "enable_confirmations": true,
+      // Our API enforces a stricter rule: a sign-in within the last five minutes (ADR 0022).
+      "secure_password_change": false,
+      "max_frequency": "60s",
+      "otp_length": 6,
+      // Ten minutes: long enough to switch to the inbox, short enough to limit a leaked code.
+      "otp_expiry": 600,
+      "template": {
+        "confirmation": {
+          "subject": "Confirm your Spiriteal account",
+          "content_path": "./supabase/templates/confirmation.html",
+        },
+        "magic_link": {
+          "subject": "Your Spiriteal sign-in code",
+          "content_path": "./supabase/templates/magic-link.html",
+        },
+        "recovery": {
+          "subject": "Reset your Spiriteal password",
+          "content_path": "./supabase/templates/recovery.html",
+        },
+        "email_change": {
+          "subject": "Confirm your new Spiriteal email address",
+          "content_path": "./supabase/templates/email-change.html",
+        },
+      },
+      "notification": {
+        "password_changed": {
+          "enabled": true,
+          "subject": "Your Spiriteal password was changed",
+          "content_path": "./supabase/templates/password-changed.html",
+        },
+      },
+    },
+
+    // Phone sign-in is deferred (ADR 0022).
+    "sms": { "enabled": false },
+
+    "mfa": {
+      "max_enrolled_factors": 10,
+      // Authenticator-app codes (TOTP): required for practitioners and admins, optional for clients.
+      "totp": {
+        "enroll_enabled": true,
+        "verify_enabled": true,
+      },
+      "phone": {
+        "enroll_enabled": false,
+        "verify_enabled": false,
+      },
+    },
+
+    "external": {
+      // Switch on once a Google OAuth client exists. Credentials are never committed: they go in
+      // supabase/.env (gitignored), see docs/environment.md. The web shows the button only when
+      // AUTH_GOOGLE_ENABLED=true.
+      "google": {
+        "enabled": false,
+        "client_id": "env(SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID)",
+        "secret": "env(SUPABASE_AUTH_EXTERNAL_GOOGLE_SECRET)",
+        "redirect_uri": "",
+        "url": "",
+        // Google's ID tokens carry a nonce the local stack cannot check.
+        "skip_nonce_check": true,
+        "email_optional": false,
+      },
+    },
+  },
+}

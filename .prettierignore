@@ -1,0 +1,11 @@
+CLAUDE.md
+docs/
+pnpm-lock.yaml
+dist/
+coverage/
+packages/db/migrations/
+.next/
+next-env.d.ts
+playwright-report/
+test-results/
+supabase/.temp/

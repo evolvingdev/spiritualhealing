@@ -1,0 +1,18 @@
+packages:
+  - apps/*
+  - packages/*
+
+# Dependency install scripts run only for the packages listed here (ADR 0010).
+onlyBuiltDependencies:
+  - '@swc/core'
+  - esbuild
+  # Downloads the Supabase CLI binary for the local stack (ADR 0023).
+  - supabase
+
+# Optional native add-ons pulled in by Testcontainers (ssh2) and Tailwind's CLI file watcher
+# (@parcel/watcher, unused: Tailwind runs through PostCSS). Their install scripts stay disabled.
+ignoredBuiltDependencies:
+  - '@parcel/watcher'
+  - cpu-features
+  - protobufjs
+  - ssh2

@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+
+/*
+ * Design tokens (ADR 0018), from the Figma reference: a soft blue-to-indigo backdrop, white
+ * cards, a blue-to-purple brand gradient. The gradient is one step deeper than the prototype so
+ * white text on it meets WCAG 2.2 AA (4.5:1). Components use these tokens only, never raw colors.
+ */
+@theme {
+  --font-sans:
+    var(--font-noto-sans), var(--font-noto-sans-devanagari), ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: oklch(98.5% 0.008 265);
+  --color-backdrop-from: oklch(97% 0.014 255);
+  --color-backdrop-to: oklch(93% 0.034 272);
+  --color-surface: oklch(100% 0 0);
+  --color-foreground: oklch(21% 0.034 265);
+  --color-muted: oklch(96% 0.006 265);
+  --color-muted-foreground: oklch(45% 0.02 265);
+  --color-border: oklch(88% 0.02 265);
+  --color-input: oklch(72% 0.02 265);
+  --color-ring: oklch(51% 0.23 277);
+
+  --color-brand-from: oklch(49% 0.21 263);
+  --color-brand-to: oklch(45% 0.22 297);
+  --color-brand-from-hover: oklch(44% 0.2 263);
+  --color-brand-to-hover: oklch(40% 0.2 297);
+  --color-brand-foreground: oklch(100% 0 0);
+  --color-link: oklch(45% 0.2 270);
+
+  --color-danger: oklch(50% 0.2 20);
+  --color-danger-surface: oklch(97% 0.02 20);
+  --color-danger-border: oklch(86% 0.07 20);
+  --color-success: oklch(42% 0.11 155);
+  --color-success-surface: oklch(97% 0.03 155);
+  --color-success-border: oklch(85% 0.08 155);
+  --color-info-surface: oklch(97% 0.02 255);
+  --color-info-border: oklch(86% 0.05 255);
+
+  --radius-control: 0.625rem;
+  --radius-card: 0.875rem;
+  --shadow-card: 0 10px 30px -12px oklch(30% 0.08 270 / 0.25);
+
+  --spacing-touch: 2.75rem;
+  --animate-spin-slow: spin 1s linear infinite;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

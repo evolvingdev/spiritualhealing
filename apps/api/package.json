@@ -1,0 +1,46 @@
+{
+  "name": "@spiritualhealing/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "node --env-file-if-exists=.env dist/main.js",
+    "dev": "tsc -p tsconfig.build.json && pnpm run --parallel \"/^dev:/\"",
+    "dev:compile": "tsc -p tsconfig.build.json --watch --preserveWatchOutput",
+    "dev:server": "node --watch --env-file-if-exists=.env dist/main.js",
+    "test:integration": "vitest run --config vitest.integration.config.ts"
+  },
+  "dependencies": {
+    "@nestjs/common": "11.2.11",
+    "@nestjs/core": "11.2.11",
+    "@nestjs/platform-express": "11.2.11",
+    "@nestjs/throttler": "6.8.0",
+    "@spiritualhealing/db": "workspace:*",
+    "@spiritualhealing/domain": "workspace:*",
+    "@spiritualhealing/shared": "workspace:*",
+    "drizzle-orm": "0.45.4",
+    "helmet": "8.3.0",
+    "jose": "6.2.18",
+    "nestjs-pino": "5.3.2",
+    "nestjs-zod": "5.6.0",
+    "pino": "10.4.0",
+    "pino-http": "11.0.0",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "11.2.11",
+    "@swc/core": "1.16.22",
+    "@testcontainers/postgresql": "12.2.2",
+    "@types/express": "5.0.6",
+    "@types/node": "26.6.6",
+    "@types/supertest": "7.2.1",
+    "postgres": "3.4.9",
+    "supertest": "7.3.2",
+    "typescript": "6.0.3",
+    "unplugin-swc": "2.0.0"
+  }
+}

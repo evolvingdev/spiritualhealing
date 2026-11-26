@@ -1,0 +1,198 @@
+{
+  "Metadata": {
+    "title": "Spiriteal",
+    "description": "A calm, private space for your spiritual wellbeing."
+  },
+  "Brand": {
+    "name": "Spiriteal",
+    "tagline": "A calm, private space for your spiritual wellbeing"
+  },
+  "Common": {
+    "skipToContent": "Skip to main content",
+    "language": "Language",
+    "pleaseWait": "Please wait…",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "or": "or",
+    "backToSignIn": "Back to sign in",
+    "continue": "Continue",
+    "signOut": "Sign out",
+    "notMedicalAdvice": "Spiriteal supports spiritual wellbeing. It is not medical advice and does not replace a doctor or therapist."
+  },
+  "Errors": {
+    "invalid_credentials": "The email or password is incorrect, or the email address has not been confirmed yet.",
+    "invalid_code": "That code is not valid or has expired. Please check it or request a new one.",
+    "link_invalid": "This link is not valid or has expired. Please request a new one.",
+    "oauth_failed": "We could not complete sign-in with Google. Please try again.",
+    "oauth_unavailable": "Sign-in with Google is not available right now.",
+    "rate_limited": "Too many attempts. Please wait a few minutes and try again.",
+    "service_unavailable": "The service is temporarily unavailable. Please try again shortly.",
+    "network_error": "We could not reach the service. Please check your connection and try again.",
+    "authentication_required": "Please sign in to continue.",
+    "reauthentication_required": "For your security, please sign in again to continue.",
+    "mfa_required": "Please complete two-step verification to continue.",
+    "policy_acceptance_required": "Please review and accept the current terms to continue.",
+    "policy_version_outdated": "Our terms have just been updated. Please review them again.",
+    "mfa_factor_required": "Your role requires at least one authenticator app, so this one cannot be removed.",
+    "password_rejected": "Please choose a different password. It may be too weak or the same as your current one.",
+    "validation_error": "Please check the highlighted fields.",
+    "forbidden": "You do not have permission to do this.",
+    "not_found": "We could not find what you were looking for.",
+    "payload_too_large": "That request is too large.",
+    "internal_error": "Something went wrong on our side. Please try again."
+  },
+  "FieldErrors": {
+    "required": "This field is required.",
+    "invalidEmail": "Enter a valid email address, like name@example.com.",
+    "passwordTooShort": "Use at least 12 characters. A few unrelated words make a strong, memorable password.",
+    "passwordTooLong": "This password is too long. Please use a shorter one.",
+    "passwordTooWeak": "This password is too easy to guess. Please choose another.",
+    "invalidCode": "Enter the 6-digit code.",
+    "mustAccept": "Please confirm this to continue."
+  },
+  "Fields": {
+    "email": "Email address",
+    "password": "Password",
+    "newPassword": "New password",
+    "newEmail": "New email address",
+    "code": "6-digit code",
+    "passwordHint": "At least 12 characters. No special rules: a long passphrase works best."
+  },
+  "Home": {
+    "title": "Welcome to Spiriteal",
+    "signIn": "Sign in",
+    "createAccount": "Create an account"
+  },
+  "SignIn": {
+    "title": "Sign in",
+    "description": "Welcome back. Sign in to continue.",
+    "submit": "Sign in",
+    "emailCodeInstead": "Email me a sign-in code instead",
+    "google": "Continue with Google",
+    "forgotPassword": "Forgot your password?",
+    "noAccount": "New to Spiriteal?",
+    "createAccount": "Create an account",
+    "reasonSignedOut": "You have signed out.",
+    "reasonSessionEnded": "Your session has ended. Please sign in again.",
+    "reasonReauth": "For your security, please sign in again to continue.",
+    "reasonPasswordChanged": "Your password has been changed. Please sign in with your new password."
+  },
+  "SignInCode": {
+    "title": "Sign in with a code",
+    "description": "We will email you a 6-digit code. No password needed.",
+    "sendCode": "Email me a code",
+    "codeSent": "If this address can be used with Spiriteal, a code is on its way. It expires in 10 minutes.",
+    "verify": "Sign in",
+    "differentEmail": "Use a different email",
+    "usePassword": "Sign in with a password instead"
+  },
+  "SignUp": {
+    "title": "Create your account",
+    "description": "Next, you will confirm you are 18 or older and review our terms.",
+    "submit": "Create account",
+    "checkInbox": "Check your inbox. If this address can be used, we have sent a link to confirm it. The link expires in 10 minutes.",
+    "haveAccount": "Already have an account?",
+    "signIn": "Sign in"
+  },
+  "ForgotPassword": {
+    "title": "Reset your password",
+    "description": "Enter your email and we will send you a link to choose a new password.",
+    "submit": "Send reset link",
+    "sent": "If an account uses this address, a reset link is on its way. It expires in 10 minutes."
+  },
+  "ResetPassword": {
+    "title": "Choose a new password",
+    "description": "You will stay signed in on this device. Other devices will be signed out.",
+    "submit": "Save new password",
+    "mfaFirst": "Complete two-step verification first, then choose your new password."
+  },
+  "Mfa": {
+    "title": "Two-step verification",
+    "requiredNotice": "Your role requires two-step verification with an authenticator app.",
+    "challengeDescription": "Enter the 6-digit code from your authenticator app.",
+    "verify": "Verify",
+    "enrollDescription": "Add an authenticator app (such as Google Authenticator or Microsoft Authenticator) for an extra layer of security.",
+    "startEnrollment": "Set up authenticator app",
+    "scanQr": "Scan this QR code with your authenticator app, then enter the 6-digit code it shows.",
+    "qrAlt": "QR code for setting up your authenticator app",
+    "manualEntry": "Can’t scan? Enter this key in your app instead:",
+    "secretLabel": "Setup key",
+    "confirmEnrollment": "Confirm and turn on",
+    "backupAdvice": "Tip: add Spiriteal to a second authenticator app too, so you can still sign in if you lose your phone."
+  },
+  "Onboarding": {
+    "title": "Before you begin",
+    "description": "Please confirm the following. You can read each document in full before agreeing.",
+    "adultAttestation": "I confirm that I am 18 years of age or older.",
+    "acceptTerms": "I agree to the <terms>Terms of Service</terms>.",
+    "acceptPrivacy": "I have read the <privacy>Privacy Notice</privacy> and understand how my personal data is used.",
+    "submit": "Agree and continue"
+  },
+  "Account": {
+    "title": "Your account",
+    "signedInAs": "Signed in as {email}",
+    "roles": "Roles",
+    "role_client": "Member",
+    "role_practitioner": "Practitioner",
+    "role_admin": "Administrator",
+    "security": "Security settings",
+    "securityDescription": "Password, email address, two-step verification and sessions.",
+    "admin": "Practitioner access",
+    "adminDescription": "Grant or remove the practitioner role.",
+    "comingSoon": "Your wellbeing tools will appear here."
+  },
+  "Security": {
+    "title": "Security",
+    "back": "Back to your account",
+    "reauthTitle": "Sign in again to make changes",
+    "reauthDescription": "For your security, changing your password, email or two-step verification needs a sign-in within the last 5 minutes.",
+    "reauthButton": "Sign in again",
+    "passwordTitle": "Change password",
+    "passwordSubmit": "Change password",
+    "passwordChanged": "Your password has been changed and your other devices have been signed out.",
+    "emailTitle": "Change email address",
+    "emailDescription": "We will send confirmation links to both your current and your new address. The change happens once both are confirmed.",
+    "emailSubmit": "Send confirmation links",
+    "emailRequested": "Check both inboxes to confirm the change.",
+    "emailConfirmed": "Address confirmed. Once both your current and new addresses are confirmed, your email is updated.",
+    "mfaTitle": "Two-step verification",
+    "mfaNone": "No authenticator app is set up.",
+    "mfaAdd": "Add an authenticator app",
+    "mfaFactor": "Authenticator app (added {date})",
+    "mfaRemove": "Remove",
+    "mfaRemoveConfirm": "Remove this authenticator app? You will no longer be able to use it to sign in.",
+    "mfaRemoved": "The authenticator app has been removed.",
+    "sessionsTitle": "Sign out everywhere",
+    "sessionsDescription": "Signs you out on every device, including this one.",
+    "sessionsSubmit": "Sign out on all devices"
+  },
+  "Admin": {
+    "title": "Practitioner access",
+    "description": "Look up a member by email to grant or remove the practitioner role. Every lookup and change is recorded.",
+    "lookupSubmit": "Look up",
+    "notFound": "No account uses that email address.",
+    "result": "Account found",
+    "currentRoles": "Current roles: {roles}",
+    "noRoles": "none",
+    "grant": "Grant practitioner role",
+    "revoke": "Remove practitioner role",
+    "granted": "The practitioner role has been granted. They will be asked to set up two-step verification.",
+    "revoked": "The practitioner role has been removed."
+  },
+  "Legal": {
+    "terms": "Terms of Service",
+    "privacy": "Privacy Notice",
+    "version": "Version {version}",
+    "draftNotice": "Draft – requires review by a qualified Indian lawyer before launch."
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has moved.",
+    "home": "Go to the home page"
+  },
+  "ErrorPage": {
+    "title": "Something went wrong",
+    "description": "Please try again. If the problem continues, contact support and quote this reference: {reference}",
+    "retry": "Try again"
+  }
+}

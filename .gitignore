@@ -1,2 +1,20 @@
 CLAUDE.md
 docs/
+
+# Dependencies and build output
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+.next/
+next-env.d.ts
+playwright-report/
+test-results/
+
+# Local environment files (only the example is committed)
+.env
+.env.*
+!.env.example
+
+# Local demo account passwords (written by the local seeding step, never committed)
+demo-accounts.local.md
